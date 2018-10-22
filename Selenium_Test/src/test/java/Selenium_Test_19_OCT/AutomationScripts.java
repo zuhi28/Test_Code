@@ -15,7 +15,7 @@ import org.testng.asserts.SoftAssert;
 import java.io.IOException;
 
 public class AutomationScripts extends ReusableMethods {
-    private static final String excelPath="/home/zuhi/Desktop/code/Selenium_Test/src/test/resources/InputFile/Test_Suite.xls";
+    private static final String excelPath = "/home/zuhi/Desktop/code/Selenium_Test/src/test/resources/InputFile/Test_Suite.xls";
     private static final Assertion hardAssert = new Assertion();
     private static final SoftAssert softAssert = new SoftAssert();
 
@@ -55,7 +55,6 @@ public class AutomationScripts extends ReusableMethods {
                 expData = inputTestData[i][2];
             }
         }
-        System.out.println(password+ " "+ userName);
         enterText(driver.findElement(By.id("email")), userName, "UserName");
         enterText(driver.findElement(By.id("password")), password, "Password");
         clickObject(driver.findElement(By.id("submitButton")), "LoginButton");
@@ -123,9 +122,7 @@ public class AutomationScripts extends ReusableMethods {
     @Test
     public static void Navigate_To_XERO_B() throws IOException {
         setup();
-        System.out.println(excelPath);
         String[][] inputTestData = readxlData(excelPath, "Navigate_To_XERO_B");
-        System.out.println(inputTestData);
         String userName = null;
         String password = null;
         String expData = null;
@@ -169,7 +166,7 @@ public class AutomationScripts extends ReusableMethods {
                 expData = inputTestData[i][2];
             }
         }
-        clickObject(driver.findElement(By.xpath("//a[@class='btn btn-primary global-ceiling-bar-btn']")),"FreeTrial");
+        clickObject(driver.findElement(By.xpath("//a[@class='btn btn-primary global-ceiling-bar-btn']")), "FreeTrial");
         String actData = driver.findElement(By.xpath("//h2[@class='title title-2']")).getText();
         if (actData.equalsIgnoreCase(expData)) {
             logger.log(Status.PASS, MarkupHelper.createLabel("Free Signup page is displayed", ExtentColor.GREEN));
@@ -181,7 +178,6 @@ public class AutomationScripts extends ReusableMethods {
         enterText(driver.findElement(By.name("PhoneNumber")), "7206094533", "PhoneNumber");
         Select select = new Select(driver.findElement(By.name("LocationCode")));
         select.selectByValue("US");
-        System.out.println("US selected");
         driver.switchTo().frame("a-ne67ztsawqs0");
         clickObject(driver.findElement(By.className("rc-inline-block")), "VerificationButton");
         clickObject(driver.findElement(By.name("TermsAccepted")), "TermsButton");
@@ -288,13 +284,63 @@ public class AutomationScripts extends ReusableMethods {
         clickObject(driver.findElement(By.xpath("//a[@class='hero-btn hero-btn-1 hero-cta btn btn-primary']")), "Free Trial");
         clickObject(driver.findElement(By.xpath("//a[contains(text(),'accountant or bookkeeper')]")), "OfferDetails");
         logger.log(Status.PASS, MarkupHelper.createLabel("Accountatnt OR Bookeeper page is displayed", ExtentColor.GREEN));
+        String actData=driver.findElement(By.xpath("//h2[@class='title title-2']")).getText();
+        if (actData.equalsIgnoreCase(expData)){
+            logger.log(Status.PASS,MarkupHelper.createLabel("Test case passed",ExtentColor.GREEN));
+        }
+        else
+            logger.log(Status.FAIL,MarkupHelper.createLabel("Test case failed",ExtentColor.RED));
         ReusableMethods.teardownWebDriver();
     }
 
+    @Test
+    public static void Test_All_Tabs_Page() throws IOException, InterruptedException {
+        setup();
+        driver.get("https://login.xero.com/");
+        String[][] inputTestData = readxlData(excelPath, "Sign_Up_To_XDC_E");
+        String userName = null;
+        String password = null;
+        String expData = null;
+        for (int i = 1; i < inputTestData.length; i++) {
+            if (inputTestData[i][1].equalsIgnoreCase("username")) {
+                userName = inputTestData[i][2];
+            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
+                password = inputTestData[i][2];
+            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
+                expData = inputTestData[i][2];
+            }
+        }
+        enterText(driver.findElement(By.id("email")), userName, "EmailAddress");
+        enterText(driver.findElement(By.id("password")),password, "Password");
+        clickObject(driver.findElement(By.id("submitButton")),"loginButton");
+        clickObject(driver.findElement(By.xpath("//a[contains(text(),'Dashboard')]")),"Dashboard");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Dashboard is displayed",ExtentColor.GREEN));
+        clickObject(driver.findElement(By.linkText("Accounts")),"Accounts");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Account dropdown is displayed",ExtentColor.GREEN));
+        clickObject(driver.findElement(By.linkText("Reports")),"Reports");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Reports dropdown is displayed",ExtentColor.GREEN));
+        clickObject(driver.findElement(By.linkText("Contacts")),"Contacts");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Contact dropdown is displayed",ExtentColor.GREEN));
+        clickObject(driver.findElement(By.linkText("Settings")),"Settings");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Settings dropdown is displayed",ExtentColor.GREEN));
+        clickObject(driver.findElement(By.id("quicklaunchTab")),"Additional tab");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Expand tab is displayed",ExtentColor.GREEN));
+        clickObject(driver.findElement(By.className("files")),"Files");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Files page is displayed",ExtentColor.GREEN));
+        Thread.sleep(6000);
+        clickObject(driver.findElement(By.className("xn-h-notification-count")),"Notific");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Notification is displayed",ExtentColor.GREEN));
+        clickObject(driver.findElement(By.className("search")),"Search");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Search field is entered",ExtentColor.GREEN));
+        clickObject(driver.findElement(By.className("help")),"Help");
+        logger.log(Status.PASS,MarkupHelper.createLabel("Help field is displayed",ExtentColor.GREEN));
+        driver.close();
 
-    @AfterClass
-    public static void tearDown() {
-        ReusableMethods.teardownWebDriver();
-        System.out.println("Tests done");
     }
-}
+
+        @AfterClass
+        public static void tearDown () {
+            ReusableMethods.teardownWebDriver();
+            System.out.println("Tests done");
+        }
+    }

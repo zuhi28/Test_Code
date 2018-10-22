@@ -118,8 +118,8 @@ public class ReusableMethods {
     }
 
     public static void initializeExtentReport(String reportName) {
-        String reportPath = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
-        htmlReporter = new ExtentHtmlReporter("src/test/resources/TestReports" + reportPath + reportName + ".html");
+        String reportFormat = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss").format(new Date());
+        htmlReporter = new ExtentHtmlReporter("src/test/resources/TestReports/XeroReport" + reportFormat + ".html");
         extent = new ExtentReports();
         extent.attachReporter(htmlReporter);
         extent.setSystemInfo("Host Name", "TekArch");
@@ -145,7 +145,6 @@ public class ReusableMethods {
         FileInputStream fs = new FileInputStream(new File(path));
         HSSFWorkbook workbook = new HSSFWorkbook(fs);
         HSSFSheet sheet = workbook.getSheet(sheetName);
-        System.out.println("Opening " + sheet.getSheetName());
         int rows = sheet.getLastRowNum() + 1;
         int cols = sheet.getRow(0).getLastCellNum();
         String[][] data = new String[rows][cols];
