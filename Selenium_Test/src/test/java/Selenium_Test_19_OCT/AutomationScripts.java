@@ -13,20 +13,36 @@ import org.testng.asserts.Assertion;
 import org.testng.asserts.SoftAssert;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AutomationScripts extends ReusableMethods {
     private static final String excelPath = "/home/zuhi/Desktop/code/Selenium_Test/src/test/resources/InputFile/Test_Suite.xls";
     private static final Assertion hardAssert = new Assertion();
     private static final SoftAssert softAssert = new SoftAssert();
+    public static final String USER_NAME = "userName";
+    public static final String PASSWORD = "password";
+    public static final String EXP_DATA = "expData";
 
-    public static String[][] getTestData(String testName) {
-        String[][] testInputdata = new String[0][];
+
+    public static Map<String, String> getTestCaseInputData(String testName) {
+        String[][] inputTestData = new String[0][];
         try {
-            testInputdata = readxlData(excelPath, testName);
+            inputTestData = readxlData(excelPath, testName);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return testInputdata;
+        Map<String, String> testCaseInputValues = new HashMap<String, String>();
+        for (int i = 1; i < inputTestData.length; i++) {
+            if (inputTestData[i][1].equalsIgnoreCase(USER_NAME)) {
+                testCaseInputValues.put(USER_NAME, inputTestData[i][2]);
+            } else if (inputTestData[i][1].equalsIgnoreCase(PASSWORD)) {
+                testCaseInputValues.put(PASSWORD, inputTestData[i][2]);
+            } else if (inputTestData[i][1].equalsIgnoreCase(EXP_DATA)) {
+                testCaseInputValues.put(EXP_DATA, inputTestData[i][2]);
+            }
+        }
+        return testCaseInputValues;
     }
 
     public static void setup() {
@@ -39,45 +55,21 @@ public class AutomationScripts extends ReusableMethods {
     @Test
     public static void Navigate_To_XERO_A() throws IOException {
         setup();
-        String[][] inputTestData = readxlData(excelPath, "Navigate_To_XERO_A");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
-        loginToXero(userName,password);
+        Map<String, String> inputData = getTestCaseInputData("Navigate_To_XERO_A");
+        loginToXero(inputData.get(USER_NAME), inputData.get(PASSWORD));
         ReusableMethods.teardownWebDriver();
     }
 
     @Test
     public static void Incorrect_Password() throws IOException {
         setup();
-        String[][] inputTestData = readxlData(excelPath, "Incorrect_Password");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
-        enterText(driver.findElement(By.id("email")), userName, "userName");
-        enterText(driver.findElement(By.id("password")), password, "Password");
+        Map<String, String> inputData = getTestCaseInputData("Incorrect_Password");
+        enterText(driver.findElement(By.id("email")), inputData.get(USER_NAME), "userName");
+        enterText(driver.findElement(By.id("password")), inputData.get(PASSWORD), "Password");
         clickObject(driver.findElement(By.id("submitButton")), "LoginButton");
         String actData = driver.findElement(By.xpath("//div[@class='x-boxed warning']//p")).getText();
 
-        if (actData == expData) {
+        if (actData == inputData.get(EXP_DATA)) {
             logger.log(Status.PASS, MarkupHelper.createLabel("Error message as expected", ExtentColor.GREEN));
         } else {
             logger.log(Status.FAIL, MarkupHelper.createLabel("Error message is not as expected", ExtentColor.RED));
@@ -88,24 +80,12 @@ public class AutomationScripts extends ReusableMethods {
     @Test
     public static void Incorrect_Email() throws IOException {
         setup();
-        String[][] inputTestData = readxlData(excelPath, "Incorrect_Email");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
-        enterText(driver.findElement(By.id("email")), userName, "userName");
-        enterText(driver.findElement(By.id("password")), password, "Password");
+        Map<String, String> inputData = getTestCaseInputData("Incorrect_Email");
+        enterText(driver.findElement(By.id("email")), inputData.get(USER_NAME), "userName");
+        enterText(driver.findElement(By.id("password")), inputData.get(PASSWORD), "Password");
         clickObject(driver.findElement(By.id("submitButton")), "LoginButton");
         String actData = driver.findElement(By.xpath("//div[@class='x-boxed warning']//p")).getText();
-        if (actData == expData) {
+        if (actData == inputData.get(EXP_DATA)) {
             logger.log(Status.PASS, MarkupHelper.createLabel("Error message as expected", ExtentColor.GREEN));
         } else {
             logger.log(Status.FAIL, MarkupHelper.createLabel("Error message is not as expected", ExtentColor.RED));
@@ -116,24 +96,12 @@ public class AutomationScripts extends ReusableMethods {
     @Test
     public static void Navigate_To_XERO_B() throws IOException {
         setup();
-        String[][] inputTestData = readxlData(excelPath, "Navigate_To_XERO_B");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
+        Map<String, String> inputData = getTestCaseInputData("Navigate_To_XERO_B");
         clickObject(driver.findElement(By.className("forgot-password-advert")), "ForgotPass");
-        enterText(driver.findElement(By.id("UserName")), userName, "email");
+        enterText(driver.findElement(By.id("UserName")), inputData.get(USER_NAME), "email");
         clickObject(driver.findElement(By.className("text")), "send_Link");
         String actData = driver.findElement(By.xpath("//div[@class='x-boxed noBorder']//p[1]")).getText();
-        if (actData == expData) {
+        if (actData == inputData.get(EXP_DATA)) {
             logger.log(Status.PASS, MarkupHelper.createLabel("Reset link sent to associated email", ExtentColor.GREEN));
         } else {
             logger.log(Status.FAIL, MarkupHelper.createLabel("Something wrong with the application, Please check", ExtentColor.RED));
@@ -147,22 +115,10 @@ public class AutomationScripts extends ReusableMethods {
     public static void Sign_Up_To_XDC_A() throws IOException {
         setup();
         driver.get("https://www.xero.com/us/");
-        String[][] inputTestData = readxlData(excelPath, "Sign_Up_To_XDC_A");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
+        Map<String, String> inputData = getTestCaseInputData("Sign_Up_To_XDC_A");
         clickObject(driver.findElement(By.xpath("//a[@class='btn btn-primary global-ceiling-bar-btn']")), "FreeTrial");
         String actData = driver.findElement(By.xpath("//h2[@class='title title-2']")).getText();
-        if (actData.equalsIgnoreCase(expData)) {
+        if (actData.equalsIgnoreCase(inputData.get(EXP_DATA))) {
             logger.log(Status.PASS, MarkupHelper.createLabel("Free Signup page is displayed", ExtentColor.GREEN));
         } else
             logger.log(Status.PASS, MarkupHelper.createLabel("Free Signup page is not displayed", ExtentColor.RED));
@@ -185,29 +141,15 @@ public class AutomationScripts extends ReusableMethods {
     public static void Sign_Up_To_XDC_B() throws IOException {
         setup();
         driver.get("https://www.xero.com/us/");
-        String[][] inputTestData = readxlData(excelPath, "Sign_Up_To_XDC_B");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
+        Map<String, String> inputData = getTestCaseInputData("Sign_Up_To_XDC_B");
         clickObject(driver.findElement(By.xpath("//a[@class='hero-btn hero-btn-1 hero-cta btn btn-primary']")), "Free Trial");
         clickObject(driver.findElement(By.xpath("//button[@type='submit']")), "GetStarted");
         String actData = driver.findElement(By.id("form-error-message")).getText();
-        if (actData == expData) {
+        if (actData == inputData.get(EXP_DATA)) {
             logger.log(Status.PASS, MarkupHelper.createLabel("Email not provided", ExtentColor.GREEN));
         } else {
             logger.log(Status.FAIL, MarkupHelper.createLabel("Expected error message not displayed", ExtentColor.RED));
         }
-
-
         ReusableMethods.teardownWebDriver();
     }
 
@@ -215,19 +157,7 @@ public class AutomationScripts extends ReusableMethods {
     public static void Sign_Up_To_XDC_C() throws IOException {
         setup();
         driver.get("https://www.xero.com/us/");
-        String[][] inputTestData = readxlData(excelPath, "Sign_Up_To_XDC_C");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
+        Map<String, String> inputData = getTestCaseInputData("Sign_Up_To_XDC_C");
         clickObject(driver.findElement(By.xpath("//a[@class='hero-btn hero-btn-1 hero-cta btn btn-primary']")), "Free Trial");
         clickObject(driver.findElement(By.xpath("//a[contains(text(),'terms of use')]")), "Terms");
         clickObject(driver.findElement(By.xpath("//a[contains(text(),'terms of use')]")), "Terms");
@@ -239,19 +169,8 @@ public class AutomationScripts extends ReusableMethods {
     public static void Sign_Up_To_XDC_D() throws IOException {
         setup();
         driver.get("https://www.xero.com/us/");
-        String[][] inputTestData = readxlData(excelPath, "Sign_Up_To_XDC_D");
+        Map<String, String> inputData = getTestCaseInputData("Sign_Up_To_XDC_D");
         String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
         clickObject(driver.findElement(By.xpath("//a[@class='hero-btn hero-btn-1 hero-cta btn btn-primary']")), "Free Trial");
         clickObject(driver.findElement(By.xpath("//a[contains(text(),'offer details')]")), "OfferDetails");
         logger.log(Status.PASS, MarkupHelper.createLabel("Offer Details pages are displayed", ExtentColor.GREEN));
@@ -262,28 +181,15 @@ public class AutomationScripts extends ReusableMethods {
     public static void Sign_Up_To_XDC_E() throws IOException {
         setup();
         driver.get("https://www.xero.com/us/");
-        String[][] inputTestData = readxlData(excelPath, "Sign_Up_To_XDC_E");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
+        Map<String, String> inputData = getTestCaseInputData("Sign_Up_To_XDC_E");
         clickObject(driver.findElement(By.xpath("//a[@class='hero-btn hero-btn-1 hero-cta btn btn-primary']")), "Free Trial");
         clickObject(driver.findElement(By.xpath("//a[contains(text(),'accountant or bookkeeper')]")), "OfferDetails");
         logger.log(Status.PASS, MarkupHelper.createLabel("Accountatnt OR Bookeeper page is displayed", ExtentColor.GREEN));
-        String actData=driver.findElement(By.xpath("//h2[@class='title title-2']")).getText();
-        if (actData.equalsIgnoreCase(expData)){
-            logger.log(Status.PASS,MarkupHelper.createLabel("Test case passed",ExtentColor.GREEN));
-        }
-        else
-            logger.log(Status.FAIL,MarkupHelper.createLabel("Test case failed",ExtentColor.RED));
+        String actData = driver.findElement(By.xpath("//h2[@class='title title-2']")).getText();
+        if (actData.equalsIgnoreCase(inputData.get(EXP_DATA))) {
+            logger.log(Status.PASS, MarkupHelper.createLabel("Test case passed", ExtentColor.GREEN));
+        } else
+            logger.log(Status.FAIL, MarkupHelper.createLabel("Test case failed", ExtentColor.RED));
         ReusableMethods.teardownWebDriver();
     }
 
@@ -291,73 +197,54 @@ public class AutomationScripts extends ReusableMethods {
     public static void Test_All_Tabs_Page() throws IOException, InterruptedException {
         setup();
         driver.get("https://login.xero.com/");
-        String[][] inputTestData = readxlData(excelPath, "Sign_Up_To_XDC_E");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
-        enterText(driver.findElement(By.id("email")), userName, "EmailAddress");
-        enterText(driver.findElement(By.id("password")),password, "Password");
-        clickObject(driver.findElement(By.id("submitButton")),"loginButton");
-        clickObject(driver.findElement(By.xpath("//a[contains(text(),'Dashboard')]")),"Dashboard");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Dashboard is displayed",ExtentColor.GREEN));
-        clickObject(driver.findElement(By.linkText("Accounts")),"Accounts");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Account dropdown is displayed",ExtentColor.GREEN));
-        clickObject(driver.findElement(By.linkText("Reports")),"Reports");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Reports dropdown is displayed",ExtentColor.GREEN));
-        clickObject(driver.findElement(By.linkText("Contacts")),"Contacts");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Contact dropdown is displayed",ExtentColor.GREEN));
-        clickObject(driver.findElement(By.linkText("Settings")),"Settings");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Settings dropdown is displayed",ExtentColor.GREEN));
-        clickObject(driver.findElement(By.id("quicklaunchTab")),"Additional tab");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Expand tab is displayed",ExtentColor.GREEN));
-        clickObject(driver.findElement(By.className("files")),"Files");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Files page is displayed",ExtentColor.GREEN));
+        Map<String, String> inputData = getTestCaseInputData("Sign_Up_To_XDC_E");
+        enterText(driver.findElement(By.id("email")), inputData.get(USER_NAME), "EmailAddress");
+        enterText(driver.findElement(By.id("password")), inputData.get(PASSWORD), "Password");
+        clickObject(driver.findElement(By.id("submitButton")), "loginButton");
+        clickObject(driver.findElement(By.xpath("//a[contains(text(),'Dashboard')]")), "Dashboard");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Dashboard is displayed", ExtentColor.GREEN));
+        clickObject(driver.findElement(By.linkText("Accounts")), "Accounts");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Account dropdown is displayed", ExtentColor.GREEN));
+        clickObject(driver.findElement(By.linkText("Reports")), "Reports");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Reports dropdown is displayed", ExtentColor.GREEN));
+        clickObject(driver.findElement(By.linkText("Contacts")), "Contacts");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Contact dropdown is displayed", ExtentColor.GREEN));
+        clickObject(driver.findElement(By.linkText("Settings")), "Settings");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Settings dropdown is displayed", ExtentColor.GREEN));
+        clickObject(driver.findElement(By.id("quicklaunchTab")), "Additional tab");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Expand tab is displayed", ExtentColor.GREEN));
+        clickObject(driver.findElement(By.className("files")), "Files");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Files page is displayed", ExtentColor.GREEN));
         Thread.sleep(6000);
-        clickObject(driver.findElement(By.className("xn-h-notification-count")),"Notific");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Notification is displayed",ExtentColor.GREEN));
-        clickObject(driver.findElement(By.className("search")),"Search");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Search field is entered",ExtentColor.GREEN));
-        clickObject(driver.findElement(By.className("help")),"Help");
-        logger.log(Status.PASS,MarkupHelper.createLabel("Help field is displayed",ExtentColor.GREEN));
-        driver.close();
+        clickObject(driver.findElement(By.className("xn-h-notification-count")), "Notific");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Notification is displayed", ExtentColor.GREEN));
+        clickObject(driver.findElement(By.className("search")), "Search");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Search field is entered", ExtentColor.GREEN));
+        clickObject(driver.findElement(By.className("help")), "Help");
+        logger.log(Status.PASS, MarkupHelper.createLabel("Help field is displayed", ExtentColor.GREEN));
+        ReusableMethods.teardownWebDriver();
 
     }
+
     @Test
-    public void Test_Logout_Functionality() throws IOException {
+    public static void Test_Logout_Functionality() throws IOException {
         setup();
-        String[][] inputTestData = readxlData(excelPath, "Test_Logout_Functionality");
-        String userName = null;
-        String password = null;
-        String expData = null;
-        for (int i = 1; i < inputTestData.length; i++) {
-            if (inputTestData[i][1].equalsIgnoreCase("username")) {
-                userName = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
-                password = inputTestData[i][2];
-            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
-                expData = inputTestData[i][2];
-            }
-        }
-        loginToXero(userName,password);
-        clickObject(driver.findElement(By.className("username")),"MenuButton");
-        clickObject(driver.findElement(By.linkText("Logout")),"Logout");
-        verifyText(driver.findElement(By.id("email")),"Username",userName);
+        Map<String, String> inputData = getTestCaseInputData("Test_Logout_Functionality");
+        loginToXero(inputData.get(USER_NAME), inputData.get(PASSWORD));
+        clickObject(driver.findElement(By.className("username")), "MenuButton");
+        clickObject(driver.findElement(By.linkText("Logout")), "Logout");
+        verifyText(driver.findElement(By.id("email")), "Username", inputData.get(USER_NAME));
+        ReusableMethods.teardownWebDriver();
+    }
 
+    @Test
+    public static void Test_Upload_Profile_Image() {
 
     }
 
-        @AfterClass
-        public static void tearDown () {
-            ReusableMethods.teardownWebDriver();
-            System.out.println("Tests done");
-        }
+    @AfterClass
+    public static void tearDown() {
+        ReusableMethods.teardownWebDriver();
+        System.out.println("Tests done");
     }
+}
