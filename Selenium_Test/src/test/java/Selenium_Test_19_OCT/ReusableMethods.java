@@ -94,6 +94,12 @@ public class ReusableMethods {
         } else
             logger.log(Status.FAIL, MarkupHelper.createLabel(objName + " is not found", ExtentColor.RED));
     }
+    public static void loginToXero(String userName,String password){
+        enterText(driver.findElement(By.id("email")), userName, "UserName");
+        enterText(driver.findElement(By.id("password")), password, "Password");
+        clickObject(driver.findElement(By.id("submitButton")), "LoginButton");
+
+    }
 
     public static void verifyText(WebElement obj, String objName, String expectedText) throws IOException {
         if (obj.isDisplayed()) {

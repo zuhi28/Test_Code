@@ -19,14 +19,6 @@ public class AutomationScripts extends ReusableMethods {
     private static final Assertion hardAssert = new Assertion();
     private static final SoftAssert softAssert = new SoftAssert();
 
-    @BeforeClass
-    public static void setup() {
-        logger.log(Status.PASS, "Test starting");
-        driver = ReusableMethods.setupWebDriver();
-        driver.get("https://login.xero.com/us");
-        logger.log(Status.PASS, "Xero application page is displayed");
-    }
-
     public static String[][] getTestData(String testName) {
         String[][] testInputdata = new String[0][];
         try {
@@ -35,8 +27,13 @@ public class AutomationScripts extends ReusableMethods {
             e.printStackTrace();
         }
         return testInputdata;
+    }
 
-
+    public static void setup() {
+        logger.log(Status.PASS, "Test starting");
+        driver = ReusableMethods.setupWebDriver();
+        driver.get("https://login.xero.com/us");
+        logger.log(Status.PASS, "Xero application page is displayed");
     }
 
     @Test
@@ -55,10 +52,7 @@ public class AutomationScripts extends ReusableMethods {
                 expData = inputTestData[i][2];
             }
         }
-        enterText(driver.findElement(By.id("email")), userName, "UserName");
-        enterText(driver.findElement(By.id("password")), password, "Password");
-        clickObject(driver.findElement(By.id("submitButton")), "LoginButton");
-
+        loginToXero(userName,password);
         ReusableMethods.teardownWebDriver();
     }
 
@@ -335,6 +329,29 @@ public class AutomationScripts extends ReusableMethods {
         clickObject(driver.findElement(By.className("help")),"Help");
         logger.log(Status.PASS,MarkupHelper.createLabel("Help field is displayed",ExtentColor.GREEN));
         driver.close();
+
+    }
+    @Test
+    public void Test_Logout_Functionality() throws IOException {
+        setup();
+        String[][] inputTestData = readxlData(excelPath, "Test_Logout_Functionality");
+        String userName = null;
+        String password = null;
+        String expData = null;
+        for (int i = 1; i < inputTestData.length; i++) {
+            if (inputTestData[i][1].equalsIgnoreCase("username")) {
+                userName = inputTestData[i][2];
+            } else if (inputTestData[i][1].equalsIgnoreCase("password")) {
+                password = inputTestData[i][2];
+            } else if (inputTestData[i][1].equalsIgnoreCase("actdata")) {
+                expData = inputTestData[i][2];
+            }
+        }
+        loginToXero(userName,password);
+        clickObject(driver.findElement(By.className("username")),"MenuButton");
+        clickObject(driver.findElement(By.linkText("Logout")),"Logout");
+        verifyText(driver.findElement(By.id("email")),"Username",userName);
+
 
     }
 

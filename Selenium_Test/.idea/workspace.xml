@@ -5,6 +5,7 @@
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/../selenium-example/target/" />
+    <ignored path="$PROJECT_DIR$/../MobileTesting/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,14 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReusableMethods.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
+      <file leaf-file-name="AutomationScripts.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="121" column="88" selection-start-line="121" selection-start-column="88" selection-end-line="121" selection-end-column="88" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="96">
+              <caret line="33" selection-start-line="33" selection-end-line="33" />
             </state>
           </provider>
         </entry>
@@ -29,20 +27,17 @@
       <file leaf-file-name="DriverScript.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/DriverScript.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+            <state relative-caret-position="96">
+              <caret line="18" selection-start-line="18" selection-end-line="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AutomationScripts.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java">
+      <file leaf-file-name="ReusableMethods.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2796">
-              <caret line="329" column="25" selection-start-line="329" selection-start-column="25" selection-end-line="329" selection-end-column="25" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="96">
+              <caret line="60" selection-start-line="60" selection-end-line="60" />
             </state>
           </provider>
         </entry>
@@ -79,11 +74,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/test/java/Selenium_Test_19OCT/AutomationScripts.java" />
         <option value="$PROJECT_DIR$/src/test/java/Selenium_Test_19OCT/DriverScript.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/Xero_Base.java" />
         <option value="$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/DriverScript.java" />
-        <option value="$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/../MobileTesting/pom.xml" />
+        <option value="$PROJECT_DIR$/../MobileTesting/src/test/java/com/tekarcch/testing/mobile/WhatsAppTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java" />
+        <option value="$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java" />
       </list>
     </option>
   </component>
@@ -106,17 +103,32 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="75" />
-    <option name="y" value="16" />
-    <option name="width" value="1281" />
-    <option name="height" value="732" />
+    <option name="x" value="64" />
+    <option name="y" value="-11" />
+    <option name="width" value="1303" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="MobileTesting" type="cbb8eebc:String" user="MobileTesting" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="MobileTesting" type="cbb8eebc:String" user="MobileTesting" />
+              <item name="$PROJECT_DIR$/../MobileTesting" type="cbb8eebc:String" user="$PROJECT_DIR$/../MobileTesting" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
@@ -166,23 +178,44 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="InputFile" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
             <path>
-              <item name="Selenium_Test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Selenium_Test" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="TestReports" type="462c0819:PsiDirectoryNode" />
+              <item name="Selenium_Test" type="58d84e3e:PackageViewProjectNode" />
+              <item name="MobileTesting" type="616d4139:PackageViewModuleNode" />
+            </path>
+            <path>
+              <item name="Selenium_Test" type="58d84e3e:PackageViewProjectNode" />
+              <item name="MobileTesting" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Selenium_Test" type="58d84e3e:PackageViewProjectNode" />
+              <item name="MobileTesting" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="tekarcch" type="1f31426a:PackageElementNode" />
+            </path>
+            <path>
+              <item name="Selenium_Test" type="58d84e3e:PackageViewProjectNode" />
+              <item name="MobileTesting" type="616d4139:PackageViewModuleNode" />
+              <item name="com" type="1f31426a:PackageElementNode" />
+              <item name="tekarcch" type="1f31426a:PackageElementNode" />
+              <item name="testing" type="1f31426a:PackageElementNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../selenium-example/pom.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../MobileTesting/pom.xml" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -232,64 +265,6 @@
         <value defaultName="singleModule" />
       </option>
       <patterns />
-    </configuration>
-    <configuration name="AutomationScriptSFDC.testCase1" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="selenium-example" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.movoto.AutomationScriptsSF.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="org.movoto.AutomationScriptsSF" />
-      <option name="MAIN_CLASS_NAME" value="org.movoto.AutomationScriptsSF.AutomationScriptSFDC" />
-      <option name="METHOD_NAME" value="testCase1" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
-    </configuration>
-    <configuration name="AutomationScripts" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Selenium_Test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Selenium_Test_19_OCT.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="SUITE_NAME" />
-      <option name="PACKAGE_NAME" value="Selenium_Test_19_OCT" />
-      <option name="MAIN_CLASS_NAME" value="Selenium_Test_19_OCT.AutomationScripts" />
-      <option name="METHOD_NAME" />
-      <option name="GROUP_NAME" />
-      <option name="TEST_OBJECT" value="CLASS" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="OUTPUT_DIRECTORY" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <option name="USE_DEFAULT_REPORTERS" value="false" />
-      <option name="PROPERTIES_FILE" />
-      <properties />
-      <listeners />
     </configuration>
     <configuration name="AutomationScripts.Navigate_To_XERO_A" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Test" />
@@ -349,6 +324,64 @@
       <properties />
       <listeners />
     </configuration>
+    <configuration name="WhatsAppTest" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MobileTesting" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tekarcch.testing.mobile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.tekarcch.testing.mobile" />
+      <option name="MAIN_CLASS_NAME" value="com.tekarcch.testing.mobile.WhatsAppTest" />
+      <option name="METHOD_NAME" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
+    <configuration name="WhatsAppTest.testApp" type="TestNG" factoryName="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="MobileTesting" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.tekarcch.testing.mobile.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="SUITE_NAME" />
+      <option name="PACKAGE_NAME" value="com.tekarcch.testing.mobile" />
+      <option name="MAIN_CLASS_NAME" value="com.tekarcch.testing.mobile.WhatsAppTest" />
+      <option name="METHOD_NAME" value="testApp" />
+      <option name="GROUP_NAME" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="OUTPUT_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <option name="USE_DEFAULT_REPORTERS" value="false" />
+      <option name="PROPERTIES_FILE" />
+      <properties />
+      <listeners />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
@@ -373,18 +406,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.DriverScript" />
-      <item itemvalue="TestNG.AutomationScriptSFDC.testCase1" />
-      <item itemvalue="TestNG.AutomationScripts" />
       <item itemvalue="TestNG.AutomationScripts.Navigate_To_XERO_A" />
       <item itemvalue="TestNG.AutomationScripts.Navigate_To_XERO_B" />
+      <item itemvalue="TestNG.WhatsAppTest.testApp" />
+      <item itemvalue="TestNG.WhatsAppTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.DriverScript" />
+        <item itemvalue="TestNG.WhatsAppTest.testApp" />
+        <item itemvalue="TestNG.WhatsAppTest" />
         <item itemvalue="TestNG.AutomationScripts.Navigate_To_XERO_B" />
         <item itemvalue="TestNG.AutomationScripts.Navigate_To_XERO_A" />
-        <item itemvalue="TestNG.AutomationScripts" />
-        <item itemvalue="TestNG.AutomationScriptSFDC.testCase1" />
       </list>
     </recent_temporary>
   </component>
@@ -402,28 +435,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="AutomationScripts_Navigate_To_XERO - 2018.10.20 at 01h 42m 47s.xml">
-      <configuration name="AutomationScripts.Navigate_To_XERO" configurationId="TestNG" />
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 10h 47m 15s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AutomationScriptSFDC_testCase1 - 2018.10.20 at 01h 43m 27s.xml">
-      <configuration name="AutomationScriptSFDC.testCase1" configurationId="TestNG" />
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 10h 56m 04s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AutomationScripts - 2018.10.20 at 01h 47m 33s.xml">
-      <configuration name="AutomationScripts" configurationId="TestNG" />
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 11h 15m 17s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AutomationScripts_Navigate_To_XERO_A - 2018.10.20 at 17h 45m 27s.xml">
-      <configuration name="AutomationScripts.Navigate_To_XERO_A" configurationId="TestNG" />
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 11h 16m 21s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AutomationScripts_Navigate_To_XERO_A - 2018.10.20 at 17h 58m 31s.xml">
-      <configuration name="AutomationScripts.Navigate_To_XERO_A" configurationId="TestNG" />
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 11h 17m 06s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="AutomationScripts_Navigate_To_XERO_B - 2018.10.20 at 18h 27m 02s.xml">
-      <configuration name="AutomationScripts.Navigate_To_XERO_B" configurationId="TestNG" />
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 11h 18m 11s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 11h 19m 38s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 11h 20m 46s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 11h 22m 11s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="WhatsAppTest_testApp - 2018.10.26 at 11h 23m 12s.xml">
+      <configuration name="WhatsAppTest.testApp" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1303" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="7" />
@@ -432,20 +476,20 @@
       <window_info id="Image Layers" order="2" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003984" side_tool="true" weight="0.2643857" />
-      <window_info anchor="right" id="Maven Projects" order="1" weight="0.10438247" />
+      <window_info anchor="right" id="Maven Projects" order="1" weight="0.0996016" />
       <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4996016" visible="true" weight="0.2643857" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.57076204" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4996016" weight="0.47122863" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.57076204" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.43346614" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24780877" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24940239" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.062151395" />
       <window_info id="UI Designer" order="4" />
       <window_info anchor="right" id="Theme Preview" order="6" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="1" />
@@ -458,12 +502,12 @@
       <window_info anchor="right" id="Capture Analysis" order="5" />
       <window_info anchor="bottom" id="Run" order="3" sideWeight="0.4996016" visible="true" weight="0.2643857" />
       <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35378486" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="7" weight="0.062151395" />
       <window_info anchor="bottom" id="TODO" order="7" />
-      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -473,7 +517,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.57076204" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5003984" side_tool="true" weight="0.2643857" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Version Control" order="9" show_stripe_button="false" />
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Messages" order="0" weight="0.32970452" />
@@ -484,18 +528,170 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
+  </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/../MobileTesting/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1230">
+          <caret line="82" column="21" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MobileTesting/src/test/java/com/tekarcch/testing/mobile/WhatsAppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1815">
+          <caret line="121" column="88" selection-start-line="121" selection-start-column="88" selection-end-line="121" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/DriverScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2385">
+          <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="21" lean-forward="true" selection-start-line="11" selection-start-column="7" selection-end-line="68" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="121" column="88" selection-start-line="121" selection-start-column="88" selection-end-line="121" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/DriverScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2385">
+          <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="121" column="88" selection-start-line="121" selection-start-column="88" selection-end-line="121" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/DriverScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2385">
+          <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="121" column="88" selection-start-line="121" selection-start-column="88" selection-end-line="121" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/DriverScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2385">
+          <caret line="159" column="5" selection-start-line="159" selection-start-column="5" selection-end-line="159" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="68" column="21" selection-start-line="68" selection-start-column="21" selection-end-line="68" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1815">
+          <caret line="121" column="88" selection-start-line="121" selection-start-column="88" selection-end-line="121" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/DriverScript.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2235">
+          <caret line="149" column="5" lean-forward="true" selection-start-line="149" selection-start-column="5" selection-end-line="149" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1800">
           <caret line="120" column="27" selection-start-line="120" selection-start-column="27" selection-end-line="120" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -510,9 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3105">
           <caret line="207" selection-start-line="207" selection-end-line="207" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -534,9 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="54" selection-start-line="2" selection-start-column="54" selection-end-line="2" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -544,9 +734,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -582,13 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="480">
           <caret line="32" column="52" lean-forward="true" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="62" column="25" selection-start-line="62" selection-start-column="25" selection-end-line="62" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -633,30 +813,55 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/TestReports20181020205146XeroTestscriptsReport.html" />
     <entry file="file://$PROJECT_DIR$/src/test/resources2018-10-21-16-33-41XeroTestscriptsReport.html" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="121" column="88" selection-start-line="121" selection-start-column="88" selection-end-line="121" selection-end-column="88" />
+        <state relative-caret-position="426">
+          <caret line="68" column="21" selection-start-line="11" selection-start-column="7" selection-end-line="68" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/io/appium/java-client/6.0.0-BETA5/java-client-6.0.0-BETA5.jar!/io/appium/java_client/TouchAction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MobileTesting/src/test/java/com/tekarcch/testing/mobile/WhatsAppTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../MobileTesting/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/DriverScript.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+        <state relative-caret-position="96">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/AutomationScripts.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2796">
-          <caret line="329" column="25" selection-start-line="329" selection-start-column="25" selection-end-line="329" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="96">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Selenium_Test_19_OCT/ReusableMethods.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
         </state>
       </provider>
     </entry>
