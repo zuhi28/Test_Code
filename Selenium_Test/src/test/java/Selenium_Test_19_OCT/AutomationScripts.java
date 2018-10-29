@@ -239,6 +239,13 @@ public class AutomationScripts extends ReusableMethods {
 
     @Test
     public static void Test_Upload_Profile_Image() {
+        setup();
+        Map<String,String> inputData=getTestCaseInputData("Test_Upload_Profile_Image");
+        loginToXero(inputData.get(USER_NAME),inputData.get(PASSWORD));
+        clickObject(driver.findElement(By.className("username")), "MenuButton");
+        clickObject(driver.findElement(By.linkText("Profile")), "Profile");
+        clickObject(driver.findElement(By.id("button-1041-btnInnerEl")),"UploadImage");
+        clickObject(driver.findElement(By.id("toolbar-1190-innerCt")),"Browse");
 
     }
 

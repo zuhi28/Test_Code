@@ -7,6 +7,7 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/../selenium-example/pom.xml" />
         <option value="$PROJECT_DIR$/../MobileTesting/pom.xml" />
+        <option value="$PROJECT_DIR$/../protractor_jasmine/pom.xml" />
       </list>
     </option>
   </component>
